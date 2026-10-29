@@ -1,14 +1,13 @@
-# CI/CD Tools and Practices Final Project Template
+# cicd-final-project
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+**Project name:** cicd-final-project
 
-## Usage
+This repository contains the Final Project for the Coursera course **CI/CD Tools and Practices**.
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
+It is a Python Flask **Hit Counter** microservice with a complete CI/CD setup:
 
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template.
-
-Name your repo: `ci-cd-final-project`.
+- **GitHub Actions** CI workflow (`.github/workflows/workflow.yml`) that lints the code with **flake8** and runs the unit tests with **nose**
+- **Tekton** tasks (`.tekton/tasks.yml`): a **cleanup** task and a **nose** task, used in an **OpenShift** pipeline
 
 ## Setup
 
@@ -24,8 +23,11 @@ Then you must exit the shell and start a new one for the Python virtual environm
 exit
 ```
 
-## Tasks
+## Running the tests
 
+```bash
+nosetests -v --with-spec --spec-color --with-coverage --cover-package=service
+```
 
 ## License
 
